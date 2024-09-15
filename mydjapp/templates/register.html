@@ -1,0 +1,70 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+{% include 'header.html' %}
+{% load static %}
+
+{% include 'nav.html' %}
+
+{% include 'banner.html' %}
+	
+	
+<div id="page" style="font-family: sans-serif;">
+    <div id="content">
+        <div class="box">
+            <h2>Generate Barcode!</h2>
+            <font color="blue" style="font-size:20px;">{{ output }}</font>
+            <form method="POST" action="/register/" >
+                {% csrf_token %}	
+                <table cellspacing="20" cellpadding="20">
+                    <tr>
+                        <td style="font-size: 1.2rem;">Product Name</td>
+                        <td style="font-size: 1.2rem;"><input style="padding: 0.5rem; font-size: 1.1rem;" type="text" name="name" placeholder="Enter Name"/></td>	
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.2rem;">Buying Price</td>
+                        <td style="font-size: 1.2rem;"><input style="padding: 0.5rem; font-size: 1.1rem;" type="number" name="buying_prize" placeholder="Enter Buying Price"/></td>	
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.2rem;">Address</td>
+                        <td style="font-size: 1.2rem;"><textarea rows="5" cols="18" name="address" placeholder="Enter Address"></textarea></td>	
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.2rem;">City</td>
+                        <td style="font-size: 1.2rem;"><input style="padding: 0.5rem; font-size: 1.1rem;" type="text" name="city" placeholder="Enter City"/></td>	
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.2rem;">Selling Price</td>
+                        <td style="font-size: 1.2rem;"><input style="padding: 0.5rem; font-size: 1.1rem;" type="number" name="selling_prize" placeholder="Enter Selling Price"/></td>	
+                    </tr>
+                    
+                    <tr>
+                        <td style="font-size: 1.2rem;"><input style="padding: 1rem 2rem; font-size: 1.2rem; background-color: #5C5B5B; color: white;" type="submit"  value="Register" /></td>	
+                    </tr>
+                </table>
+            </form>		
+        </div>
+        <br class="clearfix" />
+    </div>
+
+    <div id="sidebar">
+        <div class="box">
+            <h3>Social Links</h3>
+            <ul class="list">
+                <li class="first"><a href="#">Facebook</a></li>
+                <li><a href="#">Gmail</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li class="last"><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <br class="clearfix" />
+</div>
+
+{% include 'footer.html' %}

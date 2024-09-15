@@ -1,0 +1,43 @@
+{% load static %}
+
+<script type="text/javascript">
+	$(function() {
+		$('#slider').slidertron({
+			viewerSelector: '.viewer',
+			indicatorSelector: '.indicator span',
+			reelSelector: '.reel',
+			slidesSelector: '.slide',
+			speed: 'slow',
+			advanceDelay: 4000
+		});
+	});
+</script>
+
+<div id="slider">
+    <div class="viewer">
+        <div class="reel">
+            <div class="slide">
+                <img src="{% static 'images/slide4.jpeg' %}" height="230" width="870" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{% static 'images/slide2.jpeg' %}" height="230" width="870" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{% static 'images/slide3.jpeg' %}" height="230" width="870" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{% static 'images/slide4.jpeg' %}" height="230" width="870" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{% static 'images/slide5.jpeg' %}" height="230" width="870" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="indicator">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+</div>

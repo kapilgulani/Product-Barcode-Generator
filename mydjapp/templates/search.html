@@ -1,0 +1,89 @@
+{% include 'header.html' %}
+{% load static %}
+
+{% include 'nav.html' %}
+{% include 'banner.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Search</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="page" style="display: none;">
+        <div id="content">
+            <div class="box">
+                <h2>Search Here!!!</h2>
+                <font color="blue" style="font-size:20px;">{{output}}</font>
+                <form method="POST" action="/search/" >
+                    {% csrf_token %} 
+                    <div class="form-group">
+                        <label for="barcode">Barcode Number:</label>
+                        <input type="number" id="barcode" name="barcode" placeholder="Enter Barcode Number"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Search" />
+                    </div>
+                </form>
+            </div>
+            <br class="clearfix" />
+        </div>
+
+        <div id="sidebar">
+            <div class="box">
+                <h3>Social Links</h3>
+                <ul class="list">
+                    <li class="first"><a href="#">Facebook</a></li>
+                    <li><a href="#">Gmail</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li class="last"><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <br class="clearfix" />
+    </div>
+
+    <div id="loginFormContainer" style="margin: 0 auto 0 auto;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username"  style="font-size: 1.2rem;">Username:</label>
+                <input type="text" id="username" name="username"  style="font-size: 1.2rem;padding: 0.2rem;">
+            </div>
+            <div class="form-group">
+                <label for="password" style="font-size: 1.2rem;">Password:</label>
+                <input type="password" id="password" name="password"  style="font-size: 1.2rem;padding: 0.2rem;">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" style="padding: 1rem 2rem; font-size: 1.2rem; background-color: #5C5B5B; color: white;">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            // Check if username and password are correct
+            if (username === "jayesh" && password === "jayesh123") {
+                // If correct, show the page content and hide the login form
+                document.getElementById("page").style.display = "block";
+                document.getElementById("loginFormContainer").style.display = "none";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        };
+    </script>
+</body>
+</html>
+
+
+{% include 'footer.html' %}

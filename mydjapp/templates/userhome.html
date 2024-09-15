@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+{% include 'usernav.html' %}
+
+<div class="container">
+    <h1 style="color: black; margin-top: 1rem;">Product Details</h1>
+    <ul class="userhome-list" style="padding: 2rem 5rem;font-size: 1.2rem; display: flex;flex-direction: column; gap: 1rem;">
+        <li><strong>Name:</strong> {{ userhome.name }}</li>
+        <li><strong>Buying Prize:</strong> {{ userhome.buying_prize }}</li>
+        <li><strong>Address:</strong> {{ userhome.address }}</li>
+        <li><strong>City:</strong> {{ userhome.city }}</li>
+        <li><strong>Selling Prize:</strong> {{ userhome.selling_prize }}</li>
+        <li><strong>Info:</strong> {{ userhome.info }}</li>
+        <!-- Add more fields as needed -->
+    </ul>
+</div>
+
+{% include 'footer.html' %}
